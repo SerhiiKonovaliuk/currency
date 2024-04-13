@@ -2,8 +2,8 @@
 <html>
     <head></head>
     <body>
-        {% for n in nums %}
-            <p>{{ n }}</p>
+        {% for currency, amount in nums %}
+            <p>{{ currency }}  {{ amount }}</p>
             {% endfor %}
     </body>
 </html>

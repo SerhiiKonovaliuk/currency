@@ -1,10 +1,16 @@
 from flask import *
+from currency_converter import CurrencyConverter
+
+c = CurrencyConverter()
+
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    nums = [1,2,3,4,5,6]
-    return render_template("index.html", nums=nums)
+    currencies = {
+        "USD" : c.convert(1, "USD", "EUR")
+    }
+    return render_template("index.html", currencies = currencies)
 
 if __name__ == '__main__':
     app.run()
