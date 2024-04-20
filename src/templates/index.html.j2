@@ -16,15 +16,8 @@
                 </tr>
                 {% for currency, amount in currencies.items() %}
                 <tr>
-                    <th bgcolor="#BDBDBD">Доллар</th>
+                    <th bgcolor="#BDBDBD">{{ currency }}</th>
                     <th bgcolor="#BDBDBD">{{ amount }}</th>
-                </tr>
-                <tr>
-                    <th bgcolor="#BDBDBD">Євро</th>
-                    <th bgcolor="#BDBDBD"></th>
-                </tr>
-                <tr>
-                    <th bgcolor="#BDBDBD"></th>
                 </tr>
                 {% endfor %}
             </tbody>
