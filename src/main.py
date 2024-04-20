@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     currencies = {
-        "USD" : convert(amount=1, to=['UAH'])
+        "USD" : convert(amount=1, to=['UAH'])["UAH"]
     }
     return render_template("index.html.j2", currencies = currencies)
 

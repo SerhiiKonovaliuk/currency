@@ -4,8 +4,31 @@
         <link rel="stylesheet" type="text/css" href="static/style.css">
     </head>
     <body class = "backcolor">
-        {% for currency, amount in currencies.items() %}
-            <p>{{ currency }}  {{ amount }}</p>
-            {% endfor %}
+        <header class="head">
+		
+		<img class="logo" src="static/convert1.png" alt=""> 
+		<h1 class="logotext">Курс Валют</h1>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th bgcolor="#448AFF" colspan="2">Курс Валют </th>
+                </tr>
+                {% for currency, amount in currencies.items() %}
+                <tr>
+                    <th bgcolor="#BDBDBD">Доллар</th>
+                    <th bgcolor="#BDBDBD">{{ amount }}</th>
+                </tr>
+                <tr>
+                    <th bgcolor="#BDBDBD">Євро</th>
+                    <th bgcolor="#BDBDBD"></th>
+                </tr>
+                <tr>
+                    <th bgcolor="#BDBDBD"></th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
     </body>
 </html>
