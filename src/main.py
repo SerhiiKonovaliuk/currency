@@ -10,7 +10,7 @@ def index():
     currencies = {
         "USD" : c.convert(1, "USD", "EUR")
     }
-    return render_template("index.html", currencies = currencies)
+    return render_template("index.html.j2", currencies = currencies)
 
 if __name__ == '__main__':
     app.run()

@@ -2,7 +2,7 @@
 <html>
     <head></head>
     <body>
-        {% for currency, amount in nums %}
+        {% for currency, amount in currencies.items() %}
             <p>{{ currency }}  {{ amount }}</p>
             {% endfor %}
     </body>
