@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+    <body class = "backcolor">
         {% for currency, amount in currencies.items() %}
             <p>{{ currency }}  {{ amount }}</p>
             {% endfor %}
