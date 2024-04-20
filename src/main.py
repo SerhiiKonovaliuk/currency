@@ -1,14 +1,12 @@
 from flask import *
-from currency_converter import CurrencyConverter
-
-c = CurrencyConverter()
+from py_currency_converter import convert
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
     currencies = {
-        "USD" : c.convert(1, "USD", "EUR")
+        "USD" : convert(amount=1, to=['UAH'])
     }
     return render_template("index.html.j2", currencies = currencies)
 
