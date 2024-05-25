@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="static/style.css">
-    </head>
-    <body class = "backcolor">
-        <header class="head">
-		
-		<img class="logo" src="static/convert1.png" alt=""> 
-		<h1 class="logotext">Курс Валют</h1>
 
-        <table>
-            <tbody>
-                <tr>
-                    <th bgcolor="#448AFF" colspan="2">Курс Валют </th>
-                </tr>
-                {% for currency, amount in currencies.items() %}
-                <tr>
-                    <th bgcolor="#BDBDBD">{{ currency }}</th>
-                    <th bgcolor="#BDBDBD">{{ amount }}</th>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <form method="post">
-            {{ form.csrf_token }}
-            {{ form.amount.label }}  {{ form.amount }}
-            <br>
-            {{ form.fromCurrency.label }}  {{ form.fromCurrency }}
-            <br>
-            {{ form.toCurrency.label }}  {{ form.toCurrency }}
-            <br>
-            {{ form.result }}
+<head>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
 
-            {{ form.submit }}
-        </form>
-    </body>
+<body class="backcolor">
+    <header class="head">
+
+        <img class="logo" src="static/convert1.png" alt="">
+        <h1 class="logotext">Курс Валют</h1>
+        <div align="center">
+            <table>
+                <tbody>
+                    <tr>
+                        <th bgcolor="#448AFF" colspan="2">Курс Валют </th>
+                    </tr>
+                    {% for currency, amount in currencies.items() %}
+                    <tr>
+                        <th bgcolor="#BDBDBD">{{ currency }}</th>
+                        <th bgcolor="#BDBDBD">{{ amount }}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div align="center">
+            <form method="post">
+                {{ form.csrf_token }}
+                {{ form.amount.label }} {{ form.amount }}
+                <br>
+                {{ form.fromCurrency.label }} {{ form.fromCurrency }}
+                <br>
+                {{ form.toCurrency.label }} {{ form.toCurrency }}
+                <br>
+                <div class="color1">
+                    {{ form.result }}
+                </div>
+                {{ form.submit }}
+
+            </form>
+        </div>
+</body>
+
 </html>
