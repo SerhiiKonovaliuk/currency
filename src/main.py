@@ -23,6 +23,6 @@ def get_index():
     if base != None and amount != None and to != None:
         converted = convert(base=base, amount=int(amount), to=[to])[to]
         form.result = "{:.2f}".format(converted)
-    return render_template("index.html.j2", currencies = currencies, form = form)
+    return render_template("index.html", currencies = currencies, form = form)
 if __name__ == '__main__':
     app.run()
